@@ -22,7 +22,7 @@ void (*to_print(char s))(va_list args)
 	num_handle = 4;
 	for (j = 0; j < num_handle; j++)
 	{
-		if (h_func[i].c = s)
+		if (h_func[i].c[0] == s[0])
 			h_func[i].f(va_list args);
 	}
 }
