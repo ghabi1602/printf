@@ -3,7 +3,7 @@
 /**
 * _printf - print a text according to format
 * @format: output format
-* 
+*
 * Return: return 0 on success
 */
 
@@ -16,11 +16,11 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	i = 0;
-	while(format && format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i++;	 	/* move to the next iteration after the % */
+			i++; /* move to the next iteration after the % */
 			if (format[i] == '\0')
 				break;		/* if iterations has reached the end*/
 			switch (format[i])
@@ -37,11 +37,8 @@ int _printf(const char *format, ...)
 				case 'i':
 					print_int(va_arg(args, int));
 			}
-
 			if (format[i] == '%')
-			{
 				print_char('%'); /* handles if there is not flag attached */
-			}
 		}
 		else
 		{

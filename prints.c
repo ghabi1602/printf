@@ -5,14 +5,17 @@
  * print_char - prints char
  * @c: character
  */
+
 void print_char(char c)
 {
 	write(1, &c, 1);
 }
+
 /**
  * print_str - prints a string
  * @s: string
  */
+
 void print_str(char *s)
 {
 	int len, i;
@@ -28,61 +31,69 @@ void print_str(char *s)
 		write(1, &s[i], 1);
 	}
 }
-/**
- * reverse - reverses a string
- * @str: array
- * @length: size of the array
- */
-void reverse(char str[], int length) 
-{
-    int start = 0;
-    int end = length - 1;
 
-    while (start < end) {
-        char temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
-    }
-}
 /**
- * itoa - converts an int into a string
+* reverse - reverses a string
+* @str: array
+* @length: size of the array
+*/
+
+void reverse(char str[], int length)
+{
+	int start = 0;
+	int end = length - 1;
+
+	while (start < end)
+	{
+		char temp = str[start];
+
+		str[start] = str[end];
+		str[end] = temp;
+		start++;
+		end--;
+	}
+}
+
+/**
+ * _itoa - converts an int into a string
  * @num: integer
  * @str: string
  * @base: integer
+ * Return: returs the string str
  */
 
-char* _itoa(int num, char* str, int base) 
+char *_itoa(int num, char *str, int base)
 {
-    int i = 0;
-    int isNegative = 0;
+	int i = 0;
+	int isNegative = 0;
 
-    if (num == 0) {
-        str[i++] = '0';
-        str[i] = '\0';
-        return str;
-    }
+	if (num == 0)
+	{
+		str[i++] = '0';
+		str[i] = '\0';
+		return (str);
+	}
 
-    if (num < 0 && base == 10) {
-        isNegative = 1;
-        num = -num;
-    }
+	if (num < 0 && base == 10)
+	{
+		isNegative = 1;
+		num = -num;
+	}
 
-    while (num != 0) {
-        int rem = num % base;
-        str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-        num = num / base;
-    }
+	while (num != 0)
+	{
+		int rem = num % base;
 
-    if (isNegative)
-        str[i++] = '-';
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+		num = num / base;
+	}
 
-    str[i] = '\0';
+	if (isNegative)
+		str[i++] = '-';
 
-    reverse(str, i);
-
-    return str;
+	str[i] = '\0';
+	reverse(str, i);
+	return (str);
 }
 
 /**
