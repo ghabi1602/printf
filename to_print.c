@@ -10,19 +10,19 @@
 
 void (*to_print(char s))(va_list args)
 {       
-	int num_handle, j;
+	int j;
 	h_t h_func[] =
 	{
 		{'s', print_str},
 		{'c', print_char},
 		{'d', print_int},
-		{'i', print_int}
+		{'i', print_int},
+		{'\0', NULL}
 	};
 
-	num_handle = 4;
-	for (j = 0; j < num_handle; j++)
+	for (j = 0; j != '\0'; j++)
 	{
-		if (h_func[i].c[0] == s[0])
-			h_func[i].f(va_list args);
+		if (h_func[j].c[0] == s[0])
+			h_func[j].f(va_list args);
 	}
 }
