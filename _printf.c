@@ -10,32 +10,41 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j;
+	int i;
 
 	va_start(args, *format);
 
 	i = 0;
 	while(*format && format[i] != '\0')
 	{
-		j = 0;
-		if (format[j] == '%')
+		if (format[i] == '%')
 		{
-			format++; /* move to the next iteration after the % */
+			i++;	 	/* move to the next iteration after the % */
+			if (format[i] == '\0')
+				break;		/* if iterations has reached the end*/
+			
 			switch (format[i])
 			{
 				case 'c': /* check if a char */
-					_putchar(va_arg(args, char));
+					putchar(va_arg(args, int));
 					break;
 				case 's': /* check if a string*/
-					_puts(va_arg(args, char *));
-					/*printf("%s", va_arg(args, char *));*/
+					puts(va_arg(args, char *));
+					break;
+				case 'd':
+					putchar(va_arg(args, int));
+					break;
+				case 'i':
+					putchar(va_arg(args, int));
 					break;
 				default:
-					_putchar('%'); /* handles if there is not flag attached */
-					_puts(va_arg(args, char *));
+					putchar('%'); /* handles if there is not flag attached */
 					break;
 			}
-			j++;
+		}
+		else
+		{
+			puts(format);
 		}
 	i++;	
 	}
