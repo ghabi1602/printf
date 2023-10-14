@@ -34,6 +34,8 @@ int _printf(const char *format, ...)
 				case 'd':
 					print_int(va_arg(args, int));
 					break;
+				case 'i':
+					print_int(va_arg(args, int));
 			}
 
 			if (format[i] == '%')
