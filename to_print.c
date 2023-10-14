@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdarg.h>
 /**
 * to_print - get which print method
 * @s: the string gotten from va_args
@@ -22,7 +22,7 @@ void (*to_print(char s))(va_list args)
 
 	for (j = 0; j != '\0'; j++)
 	{
-		if (h_func[j].c[0] == s[0])
+		if (h_func[j].c == s)
 			h_func[j].f(va_list args);
 	}
 }
