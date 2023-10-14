@@ -22,29 +22,16 @@ int _printf(const char *format, ...)
 			i++;	 	/* move to the next iteration after the % */
 			if (format[i] == '\0')
 				break;		/* if iterations has reached the end*/
-			
-			switch (format[i])
+			to_print(format[i]);
+
+			if (format[i] == '%')
 			{
-				case 'c': /* check if a char */
-					putchar(va_arg(args, int));
-					break;
-				case 's': /* check if a string*/
-					puts(va_arg(args, char *));
-					break;
-				case 'd':
-					putchar(va_arg(args, int));
-					break;
-				case 'i':
-					putchar(va_arg(args, int));
-					break;
-				default:
-					putchar('%'); /* handles if there is not flag attached */
-					break;
+				print_char('%'); /* handles if there is not flag attached */
 			}
 		}
 		else
 		{
-			puts(format);
+			print_char(format[i]);
 		}
 	i++;	
 	}
