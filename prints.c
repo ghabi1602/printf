@@ -92,7 +92,7 @@ char* _itoa(int num, char* str, int base)
 
 void print_int(int n)
 {
-	char *str;
+	char str[20];
 	int len;
 
 	_itoa(n, str, 10);
