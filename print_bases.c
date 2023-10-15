@@ -11,6 +11,8 @@ int print_bin(unsigned int num)
 	char str[15];
 	int len = 0;
 
+	if(!num)
+		return (-1);
 	_itoa(num, str, 2);
 
 	while (str[len] != '\0')
