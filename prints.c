@@ -24,7 +24,7 @@ int print_str(char *s)
 	int len, i;
 	
 	if (!s)
-		s = "null";
+		s = "(null)";
 
 	len = 0;
 	while (s[len] != '\0')
@@ -113,6 +113,8 @@ void print_int(int n)
 	char str[20];
 	int len;
 
+	if (!n)
+		return (-1);
 	_itoa(n, str, 10);
 
 	len = 0;
