@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include "main.h"
-
+#include <string.h>
 /**
  * print_char - prints char
  * @c: character
@@ -28,7 +28,7 @@ void print_str(char *s)
 
 	for (i = 0; i < len; i++)
 	{
-		write(1, &s[i], 1);
+		print_char(s[i]);
 	}
 }
 
