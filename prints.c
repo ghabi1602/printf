@@ -113,16 +113,24 @@ int print_int(int n)
 {
 	char str[20];
 	int len;
+	char *num_str;
+	char zero = 0;
 
+	if (n == 0)
+	{	
+		zero = '0';
+		write(1, &zero, 1);
+		return (1);
+	}
 	if (!n)
 		return (-1);
-	_itoa(n, str, 10);
+	num_str = _itoa(n, str, 10);
 
 	len = 0;
 	while (str[len] != '\0')
 	{
 		len++;
 	}
-	write(1, str, len);
+	write(1, num_str, len);
 	return (len);
 }
