@@ -6,6 +6,7 @@
  * @format: string
  * Return: the length of the printed text
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;

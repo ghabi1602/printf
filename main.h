@@ -26,11 +26,10 @@ int print_data(const char *, va_list);
 int _printf(const char *format, ...);
 int print_char(va_list);
 int  print_str(va_list);
-int print_percent(int);
 int print_int(va_list);
 char* _itoa(int num, char *str, int base);
 int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
-int print_bin(unsigned int num);
+int print_percent(va_list args);
 
 #endif

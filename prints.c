@@ -1,10 +1,8 @@
-#include <unistd.h>
 #include "main.h"
-#include <string.h>
-#include <stdarg.h>
+
 /**
  * print_char - prints char
- * @c: character
+ * @args: character
  * Return: retuns 1
  */
 
@@ -18,7 +16,7 @@ int  print_char(va_list args)
 
 /**
  * print_str - prints a string
- * @s: string
+ * @args: string
  * Return: return the len of the string
  */
 
@@ -26,7 +24,7 @@ int print_str(va_list args)
 {
 	int len, i;
 	char *s = va_arg(args, char *);
-	
+
 	if (!s)
 		s = "(null)";
 
@@ -111,7 +109,7 @@ char *_itoa(int num, char *str, int base)
 
 /**
  * print_int - prints an int
- * @n: integer
+ * @args: integer
  * Return: return 0 and -1 depending
  */
 
@@ -124,7 +122,7 @@ int print_int(va_list args)
 	int n = va_arg(args, int);
 
 	if (n == 0)
-	{	
+	{
 		zero = '0';
 		write(1, &zero, 1);
 		return (1);
@@ -139,5 +137,5 @@ int print_int(va_list args)
 		len++;
 	}
 	write(1, num_str, len);
-	return (len);
+	return (20);
 }
