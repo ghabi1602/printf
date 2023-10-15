@@ -22,10 +22,12 @@ typedef struct handler
 } hdt;
 
 /* Declarations of .c files func*/
+int print_data(const char *, va_list);
 int _printf(const char *format, ...);
-int print_char(char c);
-int  print_str(char *s);
-int print_int(int n);
+int print_char(va_list);
+int  print_str(va_list);
+int print_percent(int);
+int print_int(va_list);
 char* _itoa(int num, char *str, int base);
 int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);

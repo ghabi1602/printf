@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-
+#include <unistd.h>
 /**
  * print_data - prints several data types
  * @format: string
@@ -14,7 +14,7 @@ int print_data(const char *format, va_list args)
 			{'s', print_str},
 			{'c', print_char},
 			{'d', print_int},
-			{'u', print_unsigned},
+			/*{'u', print_unsigned},
 			{'x', print_hex},
 			{'X', print_hex_big},
 			{'b', print_binary},
@@ -23,8 +23,8 @@ int print_data(const char *format, va_list args)
 			{'r', print_rev},
 			{'S', print_S_big},
 			{'p', print_address},
-			{'%', print_percent},
-			{'\0', NULL},
+			{'%', print_percent},*/
+			{'\0', NULL}
 		};
 		int i = 0, j = 0, count = 0;
 
@@ -43,7 +43,7 @@ int print_data(const char *format, va_list args)
 						j++;
 			}
 			else
-			{	print_char(format[i]);
+			{	write(1, &format[i], 1);
 				count++; }
 			i++;
 		}
