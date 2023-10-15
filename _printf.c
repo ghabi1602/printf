@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 			i++; /* move to the next iteration after the % */
 			if (format[i] == '\0')
 			{
-				count++;
 				break;		/* if iterations has reached the end*/
 			}
 			switch (format[i])
