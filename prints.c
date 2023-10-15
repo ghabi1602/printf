@@ -6,9 +6,10 @@
  * @c: character
  */
 
-void print_char(char c)
+int  print_char(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
 /**
@@ -16,7 +17,7 @@ void print_char(char c)
  * @s: string
  */
 
-void print_str(char *s)
+int print_str(char *s)
 {
 	int len, i;
 
@@ -30,6 +31,7 @@ void print_str(char *s)
 	{
 		print_char(s[i]);
 	}
+	return (len);
 }
 
 /**

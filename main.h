@@ -23,8 +23,8 @@ typedef struct handler
 
 /* Declarations of .c files func*/
 int _printf(const char *format, ...);
-void print_char(char c);
-void print_str(char *s);
+int print_char(char c);
+int  print_str(char *s);
 void print_int(int n);
 char* _itoa(int num, char *str,int base);
 void reverse(char str[], int length);
