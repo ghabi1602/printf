@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j, count = 0;
+	int i, j = 0, count = 0;
 
 	va_start(args, format);
 
@@ -44,9 +44,11 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 'd':
-					print_int(va_arg(args, int));
-					count++;
+					j = print_int(va_arg(args, int));
+					count += j;
 					break;
+				default:
+					print_char('%');
 			}
 		}
 		else

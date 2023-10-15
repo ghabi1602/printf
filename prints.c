@@ -124,5 +124,5 @@ int print_int(int n)
 		len++;
 	}
 	write(1, str, len);
-	return (0);
+	return (len);
 }
