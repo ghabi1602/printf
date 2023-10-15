@@ -25,7 +25,7 @@ typedef struct handler
 int _printf(const char *format, ...);
 int print_char(char c);
 int  print_str(char *s);
-void print_int(int n);
+int print_int(int n);
 char* _itoa(int num, char *str,int base);
 void reverse(char str[], int length);
 int (*to_print(char s))(va_list args);

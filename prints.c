@@ -108,7 +108,7 @@ char *_itoa(int num, char *str, int base)
  * @n: integer
  */
 
-void print_int(int n)
+int print_int(int n)
 {
 	char str[20];
 	int len;
@@ -123,4 +123,5 @@ void print_int(int n)
 		len++;
 	}
 	write(1, str, len);
+	return (0);
 }
