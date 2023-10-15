@@ -41,9 +41,13 @@ int _printf(const char *format, ...)
 					break;
 				case 'i':
 					print_int(va_arg(args, int));
+					break;
+				case '%':
+					print_char('%');
+					break;
+				default:
+				print_char('%');
 			}
-			if (format[i] == '%')
-				print_char('%'); /* handles if there is not flag attached */
 		}
 		else
 		{
