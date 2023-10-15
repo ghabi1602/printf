@@ -22,6 +22,9 @@ int  print_char(char c)
 int print_str(char *s)
 {
 	int len, i;
+	
+	if (!s)
+		s = "null";
 
 	len = 0;
 	while (s[len] != '\0')
