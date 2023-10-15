@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i;
+	int i, j;
 	int count = 0;
 
 	va_start(args, format);
@@ -35,8 +35,8 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					print_str(va_arg(args, char *));
-					count++;
+					j = print_str(va_arg(args, char *));
+					count += j;
 					break;
 				case '%':
 					print_char('%');

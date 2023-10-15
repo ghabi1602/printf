@@ -4,6 +4,7 @@
 /**
  * print_char - prints char
  * @c: character
+ * Return: retuns 1
  */
 
 int  print_char(char c)
@@ -15,6 +16,7 @@ int  print_char(char c)
 /**
  * print_str - prints a string
  * @s: string
+ * Return: return the len of the string
  */
 
 int print_str(char *s)
