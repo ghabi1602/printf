@@ -9,6 +9,8 @@
 
 int  print_char(char c)
 {
+	if (!c)
+		return (-1);
 	write(1, &c, 1);
 	return (1);
 }
@@ -106,6 +108,7 @@ char *_itoa(int num, char *str, int base)
 /**
  * print_int - prints an int
  * @n: integer
+ * Return: return 0 and -1 depending
  */
 
 int print_int(int n)
