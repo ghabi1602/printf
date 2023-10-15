@@ -53,6 +53,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					print_char('%');
+					print_char(format[i]);
 			}
 		}
 		else
