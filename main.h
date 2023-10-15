@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 /* these below are the print func */
 int _putchar(char *c);
