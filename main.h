@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 /* these below are the print func */
 int _putchar(char *c);
@@ -22,11 +23,12 @@ typedef struct handler
 
 /* Declarations of .c files func*/
 int _printf(const char *format, ...);
-void print_char(char c);
-void print_str(char *s);
-void print_int(int n);
-char* _itoa(int num, char *str,int base);
-void reverse(char str[], int length);
+int print_char(char c);
+int  print_str(char *s);
+int print_int(int n);
+char* _itoa(int num, char *str, int base);
+int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
+int print_bin(unsigned int num);
 
 #endif
