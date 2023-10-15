@@ -32,7 +32,7 @@ int print_str(char *s)
 		len++;
 	}
 
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		print_char(s[i]);
 	}
@@ -43,9 +43,10 @@ int print_str(char *s)
 * reverse - reverses a string
 * @str: array
 * @length: size of the array
+* Return: return the length
 */
 
-void reverse(char str[], int length)
+int reverse(char str[], int length)
 {
 	int start = 0;
 	int end = length - 1;
@@ -59,6 +60,7 @@ void reverse(char str[], int length)
 		start++;
 		end--;
 	}
+	return (length);
 }
 
 /**
