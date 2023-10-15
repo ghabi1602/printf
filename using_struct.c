@@ -39,11 +39,12 @@ int print_data(const char *format, va_list args)
 				while (func_arr[j].c != '\0')
 					if (format[i] == func_arr[j].c)
 						count += func_arr[j].f(args);
-					else j++;
+					else
+						j++;
 			}
 			else
 			{	print_char(format[i]);
-				count++;}
+				count++; }
 			i++;
 		}
 		return (count);
