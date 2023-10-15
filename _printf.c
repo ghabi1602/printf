@@ -51,6 +51,10 @@ int _printf(const char *format, ...)
 					j = print_int(va_arg(args, int));
 					count += j;
 					break;
+				case 'b':
+					j = print_bin(va_arg(args, unsigned int));
+					count += j;
+					break;
 				default:
 					print_char('%');
 					print_char(format[i]);

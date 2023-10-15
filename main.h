@@ -29,5 +29,6 @@ int print_int(int n);
 char* _itoa(int num, char *str, int base);
 int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
+int print_bin(unsigned int num);
 
 #endif
