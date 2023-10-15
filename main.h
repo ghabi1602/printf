@@ -18,7 +18,7 @@ typedef struct handler
 {
 	char c;
 	int (*f)(va_list args);
-} h_t;
+} hdt;
 
 /* Declarations of .c files func*/
 int _printf(const char *format, ...);
