@@ -47,6 +47,10 @@ int _printf(const char *format, ...)
 					j = print_int(va_arg(args, int));
 					count += j;
 					break;
+				case 'i':
+					j = print_int(va_arg(args, int));
+					count += j;
+					break;
 				default:
 					print_char('%');
 			}
