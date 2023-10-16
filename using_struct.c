@@ -16,9 +16,10 @@ int (*print_data(char s))(va_list)
 			{'r', print_rev},
 			{'%', print_percent}
 		};
-		int i = 6;
+		int i;
+		int specs = 7;
 
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < specs; i++)
 			if (func_arr[i].c == s)
 				return (func_arr[i].f);
 		return (NULL);
