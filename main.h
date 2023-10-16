@@ -31,4 +31,5 @@ int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
 int print_percent(va_list args);
 int _putchar(char c);
+int print_binary(va_list);
 #endif
