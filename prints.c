@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 int check_int(char *);
 /**
@@ -121,6 +122,7 @@ int print_int(va_list args)
 	char *num_str;
 	char zero = 0;
 	int n = va_arg(args, int);
+	int r;
 
 	if (n == 0)
 	{
@@ -132,7 +134,8 @@ int print_int(va_list args)
 	if (!check_int(num_str))
 		return (-1);
 
-	if (n < -32767 || n > 32767)
+	r = INT_MAX;
+	if (n < -r || n > r)
 		return (-1);
 	if (!n)
 		return (-1);	
