@@ -58,6 +58,20 @@ int print_HEX(va_list args)
 }
 
 /**
+* print_unsigned - print the unsigned value of the num
+* @args: args from va_list
+* Return: the unsigned value
+*/
+
+int print_unsigned(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	char *str = converter(num, 10, 0);
+
+	return (_puts(str));
+}
+
+/**
 * converter - convert an unsigned int to any base
 * @num: an unsigned int
 * @base: the base of num
