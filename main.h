@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 /* these below are the print func */
 int _puts(char *str);
 
@@ -35,4 +35,9 @@ int print_binary(va_list);
 int print_rev(va_list);
 int print_rot13(va_list);
 int check_int(char *s);
+int print_hex(va_list);
+int print_HEX(va_list);
+int print_octal(va_list);
+char *converter(unsigned long int num, int base, int lowercase);
+
 #endif

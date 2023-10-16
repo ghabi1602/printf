@@ -11,7 +11,7 @@ int  print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
-	write(1, &c, 1);
+	_putchar(c);
 	return (1);
 }
 
@@ -23,23 +23,12 @@ int  print_char(va_list args)
 
 int print_str(va_list args)
 {
-	int len, i;
 	char *s = va_arg(args, char *);
 
 	if (!s)
 		s = "(null)";
 
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		write(1, &s[i], 1);
-	}
-	return (len);
+	return (_puts(s));
 }
 
 /**
@@ -117,31 +106,20 @@ char *_itoa(int num, char *str, int base)
 int print_int(va_list args)
 {
 	char str[20];
-	int len;
 	char *num_str;
-	char zero = 0;
+	char zero;
 	int n = va_arg(args, int);
-	int r, r2;
+
 
 	if (n == 0)
 	{
 		zero = '0';
-		len = _putchar(zero);
+		return (_putchar(zero));
 	}
 	num_str = _itoa(n, str, 10);
 
 	if (!check_int(num_str))
 		return (-1);
 
-	r = INT_MAX;
-	r2 = INT_MIN;
-
-	if (n < r2 || n > r)
-		return (-1);
-	if (!n)
-		return (-1);
-
-	len = 0;
-	len = _puts(num_str);
-	return (len);
+	return (_puts(num_str));
 }
