@@ -15,7 +15,7 @@ int check_int(char *s)
 
 	for (i = 1; i < len; i++)
 		if (s[i] < 48 || s[i] > 57)
-			return (0);
+			return (-1);
 	return (1);
 }
 
@@ -53,23 +53,23 @@ int _puts(char *s)
 
 int print_rot13(va_list args)
 {
-	int a = 0, i;
+	int  i, j;
 	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(args, char *);
 
-	while (*(s + a) != '\0')
+	for (j = 0; s[j]; j++)
 	{
-		for (i = 0; i < 52; i++)
+		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
+		else
 		{
-			if (*(s + a) == letters[i])
+			for (i = 0; i < 52; i++)
 			{
-				*(s + a) = rot13[i];
-				break;
+				if (s[j] == letters[i])
+					_putchar(rot13[i]);
 			}
 		}
-		a++;
 	}
-	_puts(s);
-	return (a);
+	return (j);
 }
