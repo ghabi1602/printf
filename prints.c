@@ -130,7 +130,6 @@ int print_int(va_list args)
 		return (-1);
 	num_str = _itoa(n, str, 10);
 
-	len = 0;
 	len = _puts(num_str);
 	return (len);
 }
