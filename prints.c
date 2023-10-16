@@ -139,7 +139,7 @@ int print_int(va_list args)
 		return (-1);
 	if (!n)
 		return (-1);	
-	
+
 	len = 0;
 	len = _puts(num_str);
 	return (len);
