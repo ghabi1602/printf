@@ -8,8 +8,21 @@
 
 int _putchar(char c)
 {
-	if (!c)
-		return (-1);
 	write(1, &c, 1);
 	return (1);
+}
+
+/**
+* _puts - prints string  of char
+* @s: pointer to str
+* Return the len of str
+*/
+
+int _puts(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		_putchar(s[i]);
+	return (i);
 }
