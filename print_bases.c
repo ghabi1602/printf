@@ -10,7 +10,7 @@ int print_binary(va_list args)
 {
 	char str[15];
 	int len = 0;
-	unsigned int num = va_arg(args, int);
+	unsigned int num = va_arg(args, unsigned int);
 
 	if (!num)
 		return (-1);
