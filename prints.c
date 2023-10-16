@@ -1,7 +1,6 @@
 #include "main.h"
 #include <limits.h>
 
-int check_int(char *);
 /**
  * print_char - prints char
  * @args: character
@@ -143,21 +142,4 @@ int print_int(va_list args)
 	len = 0;
 	len = _puts(num_str);
 	return (len);
-}
-/**
- * check_int - checks if integer
- * @num_str: string
- * Return: int
- */
-int check_int(char *s)
-{
-	int i, len = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	for (i = 1; i < len; i++)
-		if (s[i] < 48 || s[i] > 57)
-			return (0);
-	return (1);
 }
