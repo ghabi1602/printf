@@ -50,7 +50,7 @@ int _puts(char *s)
  * Return: length of the elements printed
  */
 
-int rot13(va_list args)
+int print_rot13(va_list args)
 {
 	int a = 0, i, j;
 	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

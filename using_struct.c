@@ -14,10 +14,11 @@ int (*print_data(char s))(va_list)
 			{'d', print_int},
 			{'b', print_binary},
 			{'r', print_rev},
+			{'R', print_rot13},
 			{'%', print_percent}
 		};
 		int i;
-		int specs = 7;
+		int specs = 8;
 
 		for (i = 0; i < specs; i++)
 			if (func_arr[i].c == s)
