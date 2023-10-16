@@ -2,9 +2,10 @@
 
 /**
  * check_int - checks if integer
- * @num_str: string
+ * @s: string
  * Return: int
  */
+
 int check_int(char *s)
 {
 	int i, len = 0;
@@ -45,14 +46,14 @@ int _puts(char *s)
 	return (i);
 }
 /**
- * rot13 - encodes a string using rot13
- * @s: input string.
+ * print_rot13 - encodes a string using rot13
+ * @args: input string.
  * Return: length of the elements printed
  */
 
 int print_rot13(va_list args)
 {
-	int a = 0, i, j;
+	int a = 0, i;
 	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(args, char *);

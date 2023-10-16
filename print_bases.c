@@ -47,26 +47,18 @@ int print_percent(va_list args)
 
 int print_rev(va_list args)
 {
-	char *s = va_arg(args, char *);
-	int length = 0;
-	int start = 0;
-	int end;
+	char *st;
+	int i, j = 0;
 
-	while (s[length] != '\0')
+	st = va_arg(args, char *);
+	if (st == NULL)
+		st = ")llun(";
+	for (i = 0; st[i] != '\0'; i++)
+		;
+	for (i -= 1 ; i >= 0; i--)
 	{
-		length++;
+		_putchar(st[i]);
+		j++;
 	}
-
-	end = length;
-	while (start < end)
-	{
-		char temp = s[start];
-
-		s[start] = s[end];
-		s[end] = temp;
-		start++;
-		end--;
-	}
-	_puts(s);
-	return (length);
+	return (j);
 }

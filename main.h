@@ -34,5 +34,5 @@ int _putchar(char c);
 int print_binary(va_list);
 int print_rev(va_list);
 int print_rot13(va_list);
-
+int check_int(char *s);
 #endif
