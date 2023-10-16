@@ -14,6 +14,8 @@ int print_binary(va_list args)
 
 	if (!num)
 		return (-1);
+	if (num == -num)
+		num *= num;
 	_itoa(num, str, 2);
 
 	while (str[len] != '\0')
@@ -55,7 +57,7 @@ int print_rev(va_list args)
 		length++;
 	}
 
-	end = length - 1;
+	end = length;
 	while (start < end)
 	{
 		char temp = s[start];
@@ -65,5 +67,6 @@ int print_rev(va_list args)
 		start++;
 		end--;
 	}
-	return (_puts(s));
+	_puts(s);
+	return (length);
 }
