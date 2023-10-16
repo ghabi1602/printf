@@ -12,9 +12,10 @@ int (*print_data(char s))(va_list)
 			{'s', print_str},
 			{'c', print_char},
 			{'d', print_int},
+			{'b', print_binary},
 			{'%', print_percent}
 		};
-		int i = 5;
+		int i = 6;
 
 		for (i = 0; i < 5; i++)
 			if (func_arr[i].c == s)
