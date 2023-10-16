@@ -121,7 +121,7 @@ int print_int(va_list args)
 	char *num_str;
 	char zero = 0;
 	int n = va_arg(args, int);
-	int r;
+	int r, r2;
 
 	if (n == 0)
 	{
@@ -134,7 +134,9 @@ int print_int(va_list args)
 		return (-1);
 
 	r = INT_MAX;
-	if (n < -r || n > r)
+	r2 = INT_MIN;
+
+	if (n < r2 || n > r)
 		return (-1);
 	if (!n)
 		return (-1);
