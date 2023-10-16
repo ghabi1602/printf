@@ -36,3 +36,34 @@ int print_percent(va_list args)
 	write(1, &c, 1);
 	return (1);
 }
+
+/**
+* print_rev - print reverse string
+* @args: string literal
+* Return: return len
+*/
+
+int print_rev(va_list args)
+{
+	char *s = va_arg(args, char *);
+	int length = 0;
+	int start = 0;
+	int end;
+
+	while (s[length] != '\0')
+	{
+		length++;
+	}
+
+	end = length - 1;
+	while (start < end)
+	{
+		char temp = s[start];
+
+		s[start] = s[end];
+		s[end] = temp;
+		start++;
+		end--;
+	}
+	return (_puts(s));
+}
