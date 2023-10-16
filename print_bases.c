@@ -20,8 +20,7 @@ int print_binary(va_list args)
 	{
 		len++;
 	}
-	write(1, str, len);
-	return (len);
+	return (_puts(str));
 }
 
 /**
