@@ -10,11 +10,11 @@ int print_binary(va_list args)
 {
 	char str[15];
 	int len = 0;
-	unsigned int num = va_arg(args, unsigned int);
+	int num = va_arg(args, int);
 
 	if (!num)
 		return (-1);
-	if (num == -num)
+	if (num < 0)
 		num *= num;
 	_itoa(num, str, 2);
 
