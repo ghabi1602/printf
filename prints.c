@@ -137,7 +137,7 @@ int print_int(va_list args)
 	if (n < -r || n > r)
 		return (-1);
 	if (!n)
-		return (-1);	
+		return (-1);
 
 	len = 0;
 	len = _puts(num_str);
