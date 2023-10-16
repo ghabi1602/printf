@@ -2,49 +2,22 @@
 
 /**
  * print_data - prints several data types
- * @format: string
- * @args: arguments
- * Return: int
+ * @s: char of the pointer function
+ * Return: a function
  */
-int print_data(const char *format, va_list args)
+int (*print_data(char s))(va_list)
 {
 		hdt func_arr[] = {
 			{'i', print_int},
 			{'s', print_str},
 			{'c', print_char},
 			{'d', print_int},
-			{'%', print_percent},
-			{'\0', NULL}
+			{'%', print_percent}
 		};
-		int i = 0, j = 0, count = 0;
+		int i = 5;
 
-		while (format && format[i] != '\0')
-		{
-			j = 0;
-			if (format[i] == '%')
-			{
-				i++;
-				if (format[i] == '\0')
-					break;
-				while (func_arr[j].c != '\0')
-				{
-					if (format[i] == func_arr[j].c)
-					{
-						count += func_arr[j].f(args);
-						break;
-					}
-					else
-					{
-						j++;
-					}
-				}
-			}
-			else
-			{
-				write(1, &format[i], 1);
-				count++;
-			}
-			i++;
-		}
-		return (count);
+		for (i = 0; i < 5; i++)
+			if (func_arr[i].c == s)
+				return (func_arr[i].f);
+		return (NULL);
 }

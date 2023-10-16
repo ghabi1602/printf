@@ -7,7 +7,6 @@
 #include <string.h>
 
 /* these below are the print func */
-int _putchar(char *c);
 int _puts(char *str);
 
 /**
@@ -22,7 +21,7 @@ typedef struct handler
 } hdt;
 
 /* Declarations of .c files func*/
-int print_data(const char *, va_list);
+int (*print_data(char s))(va_list);
 int _printf(const char *format, ...);
 int print_char(va_list);
 int  print_str(va_list);
@@ -31,5 +30,5 @@ char* _itoa(int num, char *str, int base);
 int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
 int print_percent(va_list args);
-
+int _putchar(char c);
 #endif
