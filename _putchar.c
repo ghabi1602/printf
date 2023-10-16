@@ -15,7 +15,7 @@ int _putchar(char c)
 /**
 * _puts - prints string  of char
 * @s: pointer to str
-* Return the len of str
+* Return: the len of str
 */
 
 int _puts(char *s)
