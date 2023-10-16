@@ -15,14 +15,15 @@ int print_binary(va_list args)
 	if (!num)
 		return (-1);
 	if (num < 0)
-		num *= num;
+		num *= -1;
 	_itoa(num, str, 2);
 
 	while (str[len] != '\0')
 	{
 		len++;
 	}
-	return (_puts(str));
+	_puts(str);
+	return (len);
 }
 
 /**
