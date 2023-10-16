@@ -10,9 +10,9 @@
 int _puts(char *str);
 
 /**
-* handler - also means the handler type
+* struct handler - also means the handler type
 * @c: the handle letter
-* *f: function pointer
+* @f: function pointer
 */
 typedef struct handler
 {
@@ -26,7 +26,7 @@ int _printf(const char *format, ...);
 int print_char(va_list);
 int  print_str(va_list);
 int print_int(va_list);
-char* _itoa(int num, char *str, int base);
+char *_itoa(int num, char *str, int base);
 int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
 int print_percent(va_list args);
