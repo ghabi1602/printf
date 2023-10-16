@@ -156,7 +156,7 @@ int check_int(char *s)
 	while (s[len] != '\0')
 		len++;
 
-	for (i = 0; i < len; i++)
+	for (i = 1; i < len; i++)
 		if (s[i] < 48 || s[i] > 57)
 			return (0);
 	return (1);
