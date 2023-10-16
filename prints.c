@@ -1,5 +1,6 @@
 #include "main.h"
 
+int check_int(char *);
 /**
  * print_char - prints char
  * @args: character
@@ -126,11 +127,34 @@ int print_int(va_list args)
 		zero = '0';
 		len = _putchar(zero);
 	}
-	if (!n)
-		return (-1);
 	num_str = _itoa(n, str, 10);
 
+	if (!check_int(num_str))
+		return (-1);
+
+	if (n < -32767 || n > 32767)
+		return (-1);
+	if (!n)
+		return (-1);	
+	
 	len = 0;
 	len = _puts(num_str);
 	return (len);
+}
+/**
+ * check_int - checks if integer
+ * @num_str: string
+ * Return: int
+ */
+int check_int(char *s)
+{
+	int i, len = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	for (i = 0; i < len; i++)
+		if (s[i] < 48 || s[i] > 57)
+			return (0);
+	return (1);
 }
