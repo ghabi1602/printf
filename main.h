@@ -32,4 +32,6 @@ int (*to_print(char s))(va_list args);
 int print_percent(va_list args);
 int _putchar(char c);
 int print_binary(va_list);
+int print_rev(va_list);
+
 #endif

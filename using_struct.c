@@ -13,6 +13,7 @@ int (*print_data(char s))(va_list)
 			{'c', print_char},
 			{'d', print_int},
 			{'b', print_binary},
+			{'r', print_rev},
 			{'%', print_percent}
 		};
 		int i = 6;
