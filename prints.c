@@ -137,5 +137,5 @@ int print_int(va_list args)
 		len++;
 	}
 	write(1, num_str, len);
-	return (20);
+	return (len);
 }
