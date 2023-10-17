@@ -142,6 +142,6 @@ int print_int(va_list args)
 
 	len = 0;
 	len = _puts(num_str);
-	free(num_str);
+	free(str);
 	return (len);
 }
