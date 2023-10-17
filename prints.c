@@ -1,5 +1,6 @@
 #include "main.h"
 #include <limits.h>
+#include <stdlib.h>
 
 /**
  * print_char - prints char
@@ -116,20 +117,28 @@ char *_itoa(int num, char *str, int base)
 
 int print_int(va_list args)
 {
-	char str[20];
-	int len;
+	int len, len2;
 	char *num_str;
 	char zero = 0;
 	int n = va_arg(args, int);
-	int r, r2;
+	int r, r2, m;
 
 	if (n == 0)
 	{
 		zero = '0';
 		len = _putchar(zero);
 	}
-	num_str = _itoa(n, str, 10);
 
+	m = n;
+	len2 = 0;
+	while (m != 0)
+	{
+		m /= 10;
+		len2++;
+	}
+	num_str = malloc(sizeof(char) * len2 + 1);
+
+	_itoa(n, num_str, 10);
 	if (!check_int(num_str))
 		return (-1);
 
@@ -143,5 +152,6 @@ int print_int(va_list args)
 
 	len = 0;
 	len = _puts(num_str);
+	free(num_str);
 	return (len);
 }
