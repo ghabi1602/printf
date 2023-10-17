@@ -41,4 +41,7 @@ int print_octal(va_list args);
 char *converter(unsigned long int num, int base, int lowercase);
 int print_unsigned(va_list args);
 int print_address(va_list args);
+int intToStr(int, char *, int);
+void ftoa(float, char *, int);
+int print_float(va_list);
 #endif
