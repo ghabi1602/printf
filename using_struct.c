@@ -18,10 +18,12 @@ int (*print_data(char s))(va_list)
 			{'o', print_octal},
 			{'x', print_hex},
 			{'X', print_HEX},
+			{'u', print_unsigned},
+			{'p', print_address},
 			{'%', print_percent}
 		};
 		register int i;
-		int specs = 11;
+		int specs = 13;
 
 		for (i = 0; i < specs; i++)
 			if (func_arr[i].c == s)

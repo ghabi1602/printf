@@ -31,13 +31,14 @@ int reverse(char str[], int length);
 int (*to_print(char s))(va_list args);
 int print_percent(va_list args);
 int _putchar(char c);
-int print_binary(va_list);
-int print_rev(va_list);
-int print_rot13(va_list);
+int print_binary(va_list args);
+int print_rev(va_list args);
+int print_rot13(va_list args);
 int check_int(char *s);
-int print_hex(va_list);
-int print_HEX(va_list);
-int print_octal(va_list);
+int print_hex(va_list args);
+int print_HEX(va_list args);
+int print_octal(va_list args);
 char *converter(unsigned long int num, int base, int lowercase);
-
+int print_unsigned(va_list args);
+int print_address(va_list args);
 #endif
