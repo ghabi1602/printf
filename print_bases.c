@@ -8,21 +8,12 @@
 
 int print_binary(va_list args)
 {
-	char str[15];
-	int len = 0;
+	char *str;
 	unsigned int num = va_arg(args, unsigned int);
 
-	if (!num)
-		return (-1);
+	str = converter(num, 2, 0);
 
-	_itoa(num, str, 2);
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-	_puts(str);
-	return (len);
+	return (_puts(str));
 }
 
 /**
@@ -35,7 +26,7 @@ int print_percent(va_list args)
 	char c = '%';
 	(void)args;
 
-	write(1, &c, 1);
+	_putchar(c);
 	return (1);
 }
 

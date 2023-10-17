@@ -27,7 +27,19 @@ int check_int(char *s)
 
 int _putchar(char c)
 {
-	write(1, &c, 1);
+	static char buf[1024];
+	static int i;
+
+	if (c == -1 || i >= 1024)
+	{
+		write(1, &buf, i);
+		i = 0;
+	}
+	if (c != -1)
+	{
+		buf[i] = c;
+		i++;
+	}
 	return (1);
 }
 
@@ -39,7 +51,7 @@ int _putchar(char c)
 
 int _puts(char *s)
 {
-	int i;
+	register int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);

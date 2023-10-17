@@ -12,7 +12,7 @@ int  print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
-	write(1, &c, 1);
+	_putchar(c);
 	return (1);
 }
 
@@ -24,23 +24,12 @@ int  print_char(va_list args)
 
 int print_str(va_list args)
 {
-	int len, i;
 	char *s = va_arg(args, char *);
 
 	if (!s)
 		s = "(null)";
 
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		write(1, &s[i], 1);
-	}
-	return (len);
+	return (_puts(s));
 }
 
 /**
@@ -117,16 +106,24 @@ char *_itoa(int num, char *str, int base)
 
 int print_int(va_list args)
 {
+<<<<<<< HEAD
 	int len, len2;
+=======
+	char str[20];
+>>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 	char *num_str;
-	char zero = 0;
+	char zero;
 	int n = va_arg(args, int);
+<<<<<<< HEAD
 	int r, r2, m;
+=======
+
+>>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 
 	if (n == 0)
 	{
 		zero = '0';
-		len = _putchar(zero);
+		return (_putchar(zero));
 	}
 
 	m = n;
@@ -142,6 +139,7 @@ int print_int(va_list args)
 	if (!check_int(num_str))
 		return (-1);
 
+<<<<<<< HEAD
 	r = INT_MAX;
 	r2 = INT_MIN;
 
@@ -154,4 +152,7 @@ int print_int(va_list args)
 	len = _puts(num_str);
 	free(num_str);
 	return (len);
+=======
+	return (_puts(num_str));
+>>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 }

@@ -15,10 +15,15 @@ int (*print_data(char s))(va_list)
 			{'b', print_binary},
 			{'r', print_rev},
 			{'R', print_rot13},
+			{'o', print_octal},
+			{'x', print_hex},
+			{'X', print_HEX},
+			{'u', print_unsigned},
+			{'p', print_address},
 			{'%', print_percent}
 		};
-		int i;
-		int specs = 8;
+		register int i;
+		int specs = 13;
 
 		for (i = 0; i < specs; i++)
 			if (func_arr[i].c == s)
