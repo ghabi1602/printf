@@ -106,19 +106,12 @@ char *_itoa(int num, char *str, int base)
 
 int print_int(va_list args)
 {
-<<<<<<< HEAD
 	int len, len2;
-=======
-	char str[20];
->>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 	char *num_str;
 	char zero;
 	int n = va_arg(args, int);
-<<<<<<< HEAD
 	int r, r2, m;
-=======
 
->>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 
 	if (n == 0)
 	{
@@ -135,11 +128,10 @@ int print_int(va_list args)
 	}
 	num_str = malloc(sizeof(char) * len2 + 1);
 
-	_itoa(n, num_str, 10);
+	num_str = _itoa(n, num_str, 10);
 	if (!check_int(num_str))
 		return (-1);
 
-<<<<<<< HEAD
 	r = INT_MAX;
 	r2 = INT_MIN;
 
@@ -152,7 +144,4 @@ int print_int(va_list args)
 	len = _puts(num_str);
 	free(num_str);
 	return (len);
-=======
-	return (_puts(num_str));
->>>>>>> 3fb476215857d2274b5a12703fc5388e5ca78165
 }
