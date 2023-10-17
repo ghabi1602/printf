@@ -1,4 +1,3 @@
-#include <math.h>
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
@@ -8,24 +7,26 @@
  * @x: integer
  * @str: array of chars
  * @d: number of decimals
+ * Return: string i
  */
-int intToStr(int x, char *str, int d) 
-{ 
-    int i = 0; 
-    while (x) { 
-        str[i++] = (x % 10) + '0'; 
-        x = x / 10; 
-    } 
- 
-    // If number of digits required is more, then 
-    // add 0s at the beginning 
-    while (i < d) 
-        str[i++] = '0'; 
- 
-    reverse(str, i); 
-    str[i] = '\0'; 
-    return i; 
+
+int intToStr(int x, char *str, int d)
+{
+	int i = 0;
+
+	while (x)
+	{
+		str[i++] = (x % 10) + '0';
+		x = x / 10;
+	}
+	while (i < d)
+		str[i++] = '0';
+	reverse(str, i);
+	str[i] = '\0';
+
+	return (i);
 }
+
 /**
  * ftoa - converts float to a string
  * @n: float
@@ -33,37 +34,30 @@ int intToStr(int x, char *str, int d)
  * @afterpoint: number of digits after the point
  * Return: void
  */
+
 void ftoa(float n, char *res, int afterpoint)
 {
-    // Extract integer part
-    int ipart = (int)n;
+	int ipart = (int)n;
+	float fpart = n - (float)ipart;
+	int i = intToStr(ipart, res, 0);
 
-    // Extract floating part
-    float fpart = n - (float)ipart;
-
-    // convert integer part to string
-    int i = intToStr(ipart, res, 0);
-
-    // check for display option after point
-    if (afterpoint != 0) {
-        res[i] = '.'; // add dot
-
-        // Get the value of fraction part upto given no.
-        // of points after dot. The third parameter
-        // is needed to handle cases like 233.007
-        fpart = fpart * pow(10, afterpoint);
-
-        intToStr((int)fpart, res + i + 1, afterpoint);
-    }
+	if (afterpoint != 0)
+	{
+		res[i] = '.';
+		fpart = fpart * _pow(10, afterpoint);
+		intToStr((int)fpart, res + i + 1, afterpoint);
+	}
 }
+
 /**
  * print_float - prints a float to stdout
  * @args: list of arguments
  * Return: int
  */
+
 int print_float(va_list args)
 {
-	float n = va_arg(args, float);
+	float n = va_arg(args, double);
 	int len = 0, i;
 	char str[20];
 	char *s;
@@ -77,11 +71,42 @@ int print_float(va_list args)
 		len++;
 
 	s = malloc(sizeof(char) * len);
+
+	if (s == NULL)
+	{
+		free(s);
+		return (-1);
+	}
 	for (i = 0; i < len; i++)
 	{
 		s[i] = str[i];
 	}
-	_puts(s);
 	free(s);
-	return (len);
+	return (_puts(s));
+}
+
+/**
+* _pow - get the power
+* @base: the base of the expon.
+* @exponent: the exponent of base
+* Return: the pow of the base
+*/
+
+double _pow(double base, int exponent)
+{
+	double result = 1.0;
+	int i;
+
+	if (exponent >= 0)
+	{
+		for (i = 0; i < exponent; i++)
+			result *= base;
+	}
+	else
+	{
+		for (i = 0; i > exponent; i--)
+			result /= base;
+	}
+
+	return (result);
 }

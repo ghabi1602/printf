@@ -106,7 +106,7 @@ char *_itoa(int num, char *str, int base)
 
 int print_int(va_list args)
 {
-	int len, len2;
+	int len2;
 	char *num_str, *str;
 	char zero;
 	int n = va_arg(args, int);
@@ -140,8 +140,6 @@ int print_int(va_list args)
 	if (!n)
 		return (-1);
 
-	len = 0;
-	len = _puts(num_str);
+	return (_puts(str));
 	free(str);
-	return (len);
 }

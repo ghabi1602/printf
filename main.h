@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
+
 /* these below are the print func */
 int _puts(char *str);
 
@@ -44,4 +46,6 @@ int print_address(va_list args);
 int intToStr(int, char *, int);
 void ftoa(float, char *, int);
 int print_float(va_list);
+double _pow(double base, int exponent);
+
 #endif
