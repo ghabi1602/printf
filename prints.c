@@ -107,7 +107,7 @@ char *_itoa(int num, char *str, int base)
 int print_int(va_list args)
 {
 	int len, len2;
-	char *num_str;
+	char *num_str, *str;
 	char zero;
 	int n = va_arg(args, int);
 	int r, r2, m;
@@ -126,9 +126,9 @@ int print_int(va_list args)
 		m /= 10;
 		len2++;
 	}
-	num_str = malloc(sizeof(char) * len2 + 1);
+	str = malloc(sizeof(char) * len2 + 1);
 
-	num_str = _itoa(n, num_str, 10);
+	num_str = _itoa(n, str, 10);
 	if (!check_int(num_str))
 		return (-1);
 
