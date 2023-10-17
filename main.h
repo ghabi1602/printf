@@ -47,5 +47,6 @@ int intToStr(int, char *, int);
 void ftoa(float, char *, int);
 int print_float(va_list);
 double _pow(double base, int exponent);
+int print_S(va_list);
 
 #endif
