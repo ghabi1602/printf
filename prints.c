@@ -135,7 +135,7 @@ int print_int(va_list args)
 	r = INT_MAX;
 	r2 = INT_MIN;
 
-	if (n < r2 || n > r)
+	if (n <= r2 || n >= r)
 		return (-1);
 	if (!n)
 		return (-1);
